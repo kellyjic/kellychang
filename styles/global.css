@@ -1,0 +1,325 @@
+/* ---- Global reset ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: white;
+  color: #000;
+}
+
+/* ---- ABOUT SECTION ---- */
+.about-section {
+  background: white;
+  padding: 6rem 2rem;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  display: block;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 560px;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about-meta {
+  margin-top: 2rem;
+}
+
+.about-meta strong {
+  font-weight: 600;
+}
+
+
+/*nav bar*/
+.nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #444;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: black;
+}
+
+.nav-links a.active {
+  color: black;
+  font-weight: 500;
+}
+
+/* PROJECTS PAGE */
+.projects-section {
+  background: white;
+}
+
+.projects-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.page-title {
+  font-family: "Inria Serif", serif;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  letter-spacing: -0.04em;
+}
+
+/* Individual project */
+.project-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Image */
+.project-image {
+  aspect-ratio: 4 / 3;
+  background: #f3f3f5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content */
+.project-content h2 {
+  font-family: "Inria Serif", serif;
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.6);
+  margin-bottom: 1.25rem;
+}
+
+.project-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-details {
+  border-left: 2px solid rgba(0,0,0,0.1);
+  padding-left: 1rem;
+  color: rgba(0,0,0,0.8);
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-tags span {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  background: rgba(0,0,0,0.05);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    max-width: 320px;
+  }
+}
+
+
+
+.home-nav {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.home-nav a {
+  font-family: "Inria Serif", serif;
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+}
+
+.home-nav a:hover {
+  opacity: 0.6;
+}
+
+.home-center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-center h1 {
+  font-family: "Inria Serif", serif;
+  font-size: 6rem;
+  letter-spacing: -0.04em;
+}
+
+.home-center p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+
+.work-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+
+.page-title {
+  font-family: "Inria Serif", serif;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  letter-spacing: -0.03em;
+}
+
+.work-item {
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.work-item:last-child {
+  border-bottom: none;
+}
+
+.work-item h2 {
+  font-family: "Inria Serif", serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-size: 1.05rem;
+  color: rgba(0,0,0,0.75);
+  margin-bottom: 0.25rem;
+}
+
+.meta {
+  font-size: 0.95rem;
+  color: rgba(0,0,0,0.55);
+  margin-bottom: 1.5rem;
+}
+
+.responsibilities p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.sub-points {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sub-points p {
+  color: rgba(0,0,0,0.75);
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tech span {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+}
