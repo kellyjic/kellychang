@@ -198,6 +198,20 @@ body {
   border-radius: 999px;
 }
 
+.project-link {
+  display: inline-block;
+  margin: 8px 0 16px;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  margin-top: 15px;
+}
+
+.project-link:hover {
+  opacity: 0.6;
+}
+
 
 /* Contact page */
 /* Contact page tweaks */
@@ -208,7 +222,7 @@ body {
 }
 
 .contact-item {
-  
+  color: #000;
   display: block;
   padding: 1.25rem 0;
   border-bottom: 1px solid rgba(0,0,0,0.08);
