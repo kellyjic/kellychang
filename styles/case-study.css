@@ -1,0 +1,263 @@
+/* ============================================================
+   CASE STUDY PAGES
+   Long-form project write-ups (FaceTime Connect, and future
+   deep-dive project pages). Uses the site's existing serif/Inter
+   system from global.css — no separate fonts, intentionally not
+   the rounded/cutesy homepage style.
+   ============================================================ */
+
+.case-hero {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 7rem 2rem 0;
+  text-align: center;
+}
+
+.case-hero > .project-link {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.case-kicker {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5765a;
+  margin-bottom: 0.75rem;
+}
+
+.case-hero .page-title {
+  margin-bottom: 0.75rem;
+}
+
+.case-dek {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 46ch;
+  margin: 0 auto 1.75rem;
+}
+
+.case-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.case-meta-pill {
+  background: #f8f5f0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.case-meta-pill b { font-weight: 600; color: #000; }
+
+.case-hero-image {
+  max-width: 60rem;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
+}
+
+.case-hero-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+  display: block;
+}
+
+.case-hero-caption {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+/* ---- sections ---- */
+.case-section {
+  padding: 4rem 0;
+}
+
+.case-section.alt {
+  background: #f8f5f0;
+}
+
+.case-section-inner {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.case-section-wide {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.case-section h2 {
+  font-family: "Inria Serif", serif;
+  font-size: clamp(1.5rem, 3.5vw, 1.9rem);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.case-section p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.75);
+  margin: 0 0 1.1rem;
+}
+
+.case-section p.lede {
+  font-size: 1.05rem;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* ---- stats ---- */
+.case-stat-row {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2rem;
+}
+
+.case-stat {
+  flex: 1 1 180px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+}
+
+.case-stat .num {
+  font-family: "Inria Serif", serif;
+  font-size: 1.8rem;
+  color: #b5765a;
+}
+
+.case-stat .lbl {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+/* ---- pull quote / insight line ---- */
+.case-insight {
+  font-family: "Inria Serif", serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+  line-height: 1.5;
+  color: #241c15;
+  border-left: 3px solid #b5765a;
+  padding-left: 1.2rem;
+  margin: 1.75rem 0;
+}
+
+/* ---- figures ---- */
+.case-figure {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.case-figure img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.case-figure figcaption {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+/* ---- lists ---- */
+ul.case-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+ul.case-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.85rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+ul.case-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #b5765a;
+}
+
+ul.case-list li b { color: #000; }
+
+ul.case-bounds {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+}
+
+ul.case-bounds li {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.7rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+ul.case-bounds li b { color: #b5765a; }
+
+/* ---- CTA ---- */
+.case-cta {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+  text-align: center;
+}
+
+.case-cta h2 { margin-bottom: 0.5rem; }
+
+.case-cta p {
+  font-family: "Inter", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+.case-cta-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .case-hero { padding-top: 6rem; }
+  .case-stat-row { flex-direction: column; }
+}

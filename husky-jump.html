@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husky Jump — Kelly Chang</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/carousels.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kelly</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active"><u>Projects</u></a>
+      <a href="art.html">Art</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="work-container">
+
+  <a href="projects.html" class="project-link">← Back to Projects</a>
+
+  <h1 class="page-title">Husky Jump</h1>
+
+  <div class="project-meta">
+    <span>UI/UX Designer &amp; Unity Game Developer</span>
+    <span class="dot">•</span>
+    <span>Jan 2026 – Jun 2026</span>
+    <span class="dot">•</span>
+    <span>In Progress</span>
+  </div>
+
+  <p>
+    Designing and developing an interactive 2D platform game for the University of
+    Washington iSchool Alumni Team. This personalized birthday experience aims to
+    increase alumni engagement, participation, and long-term community involvement
+    through gamification.
+  </p>
+
+  <p class="project-details">
+    Collaborated with a cross-functional capstone team and stakeholders to define
+    project goals and develop a minimum viable product (MVP). Led the UI/UX design
+    and contributed to Unity development, creating intuitive gameplay mechanics and
+    visually engaging interfaces.
+    <br><br>
+    Applied mobile-first and user-centered design principles to ensure accessibility
+    and usability. Key considerations included personalization, inclusive
+    representation, strong visual contrast, and short session lengths of
+    approximately five minutes. Iterated on designs based on stakeholder feedback
+    and usability insights.
+  </p>
+
+  <div class="project-tags">
+    <span>Unity</span>
+    <span>UI/UX Design</span>
+    <span>Game Development</span>
+    <span>Adobe Procreate</span>
+    <span>Figma</span>
+    <span>Accessibility</span>
+  </div>
+
+  <a href="#" target="_blank" class="project-link disabled">Play Game (Coming Soon) ↗</a>
+
+  <!-- VIDEO PLACEHOLDER: drop the file at assets/husky-jump-demo.mp4 (or update the src below) -->
+  <div class="project-video-wrap">
+    <video class="project-video" autoplay muted loop playsinline controls poster="assets/capstone.png">
+      <source src="assets/husky-jump-demo.mov">
+    </video>
+  </div>
+
+  <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(0,0,0,0.1);" />
+
+  <p class="carousel-label">Carousel style demos</p>
+  <h2 class="carousel-heading" style="font-size: 1.7rem; margin-bottom: 2.5rem;">
+    Five ways to show progress shots — templates for this page and future project pages
+  </h2>
+
+
+  <!-- ============================================================
+       CAROUSEL TEMPLATE 1 — FADE CROSSFADE
+       Slides stack on top of each other and cross-fade in place.
+       Good for: hero shots, before/after comparisons.
+       ============================================================ -->
+  <section style="margin-bottom: 4rem;">
+    <p class="carousel-label">1 · Fade Crossfade</p>
+    <h3 class="carousel-heading">Concept art fade-through</h3>
+    <p class="carousel-note">Arrows and dots switch slides; the outgoing and incoming image cross-fade in place, no layout shift.</p>
+
+    <div class="carousel-fade" aria-roledescription="carousel">
+      <figure class="carousel-fade-slide is-active"><div class="slide-placeholder"><span>Screenshot 1</span></div></figure>
+      <figure class="carousel-fade-slide"><div class="slide-placeholder"><span>Screenshot 2</span></div></figure>
+      <figure class="carousel-fade-slide"><div class="slide-placeholder"><span>Screenshot 3</span></div></figure>
+      <figure class="carousel-fade-slide"><div class="slide-placeholder"><span>Screenshot 4</span></div></figure>
+      <button class="carousel-fade-prev" aria-label="Previous slide">←</button>
+      <button class="carousel-fade-next" aria-label="Next slide">→</button>
+      <div class="carousel-fade-dots"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CAROUSEL TEMPLATE 2 — SLIDING TRACK
+       Slides sit side by side in a flex track; arrows shift the
+       whole track left/right by one slide. The classic "one slide
+       at a time" carousel.
+       ============================================================ -->
+  <section style="margin-bottom: 4rem;">
+    <p class="carousel-label">2 · Sliding Track</p>
+    <h3 class="carousel-heading">Level walkthrough</h3>
+    <p class="carousel-note">The track physically slides over — good when you want the sense of moving through a sequence.</p>
+
+    <div class="carousel-slide">
+      <div class="carousel-slide-viewport">
+        <div class="carousel-slide-track">
+          <figure class="carousel-slide-slide"><div class="slide-placeholder"><span>Screenshot 1</span></div></figure>
+          <figure class="carousel-slide-slide"><div class="slide-placeholder"><span>Screenshot 2</span></div></figure>
+          <figure class="carousel-slide-slide"><div class="slide-placeholder"><span>Screenshot 3</span></div></figure>
+          <figure class="carousel-slide-slide"><div class="slide-placeholder"><span>Screenshot 4</span></div></figure>
+        </div>
+      </div>
+      <div class="carousel-slide-controls">
+        <button class="carousel-slide-prev" aria-label="Previous slide">←</button>
+        <div class="carousel-slide-dots"></div>
+        <button class="carousel-slide-next" aria-label="Next slide">→</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CAROUSEL TEMPLATE 3 — SCROLL-SNAP FILMSTRIP
+       Native horizontal scroll with CSS scroll-snap — swipe on
+       trackpad/touch, or click the arrows to nudge by one slide.
+       ============================================================ -->
+  <section style="margin-bottom: 4rem;">
+    <p class="carousel-label">3 · Scroll-Snap Filmstrip</p>
+    <h3 class="carousel-heading">UI iterations</h3>
+    <p class="carousel-note">Swipe or scroll directly, or use the arrows — the browser handles the snapping, no index state needed.</p>
+
+    <div class="carousel-scroll">
+      <div class="carousel-scroll-track">
+        <figure class="carousel-scroll-slide"><div class="slide-placeholder"><span>Screenshot 1</span></div></figure>
+        <figure class="carousel-scroll-slide"><div class="slide-placeholder"><span>Screenshot 2</span></div></figure>
+        <figure class="carousel-scroll-slide"><div class="slide-placeholder"><span>Screenshot 3</span></div></figure>
+        <figure class="carousel-scroll-slide"><div class="slide-placeholder"><span>Screenshot 4</span></div></figure>
+        <figure class="carousel-scroll-slide"><div class="slide-placeholder"><span>Screenshot 5</span></div></figure>
+      </div>
+      <div class="carousel-scroll-controls">
+        <button class="carousel-scroll-prev" aria-label="Previous slide">←</button>
+        <button class="carousel-scroll-next" aria-label="Next slide">→</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CAROUSEL TEMPLATE 4 — THUMBNAIL RAIL
+       One large "stage" image with a row of clickable thumbnails
+       below. Good for letting viewers jump straight to a specific
+       shot instead of stepping through in order.
+       ============================================================ -->
+  <section style="margin-bottom: 4rem;">
+    <p class="carousel-label">4 · Thumbnail Rail</p>
+    <h3 class="carousel-heading">Character designs</h3>
+    <p class="carousel-note">Click any thumbnail to bring it up on the main stage.</p>
+
+    <div class="carousel-thumb">
+      <div class="carousel-thumb-stage"><div class="slide-placeholder"><span>Screenshot 1</span></div></div>
+      <div class="carousel-thumb-rail">
+        <button class="carousel-thumb-item is-active"><div class="slide-placeholder">1</div></button>
+        <button class="carousel-thumb-item"><div class="slide-placeholder">2</div></button>
+        <button class="carousel-thumb-item"><div class="slide-placeholder">3</div></button>
+        <button class="carousel-thumb-item"><div class="slide-placeholder">4</div></button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CAROUSEL TEMPLATE 5 — STACKED DECK
+       Photos stacked like a hand of cards, fanned slightly. Click
+       the top card (or the button) to send it to the back of the
+       deck and reveal the next one.
+       ============================================================ -->
+  <section style="margin-bottom: 4rem;">
+    <p class="carousel-label">5 · Stacked Deck</p>
+    <h3 class="carousel-heading">Process snapshots</h3>
+    <p class="carousel-note">Click the top card to cycle through — a more playful, hand-made feel than a flat grid.</p>
+
+    <div class="carousel-deck">
+      <div class="carousel-deck-stack">
+        <figure class="carousel-deck-card"><div class="slide-placeholder"><span>Screenshot 1</span></div></figure>
+        <figure class="carousel-deck-card"><div class="slide-placeholder"><span>Screenshot 2</span></div></figure>
+        <figure class="carousel-deck-card"><div class="slide-placeholder"><span>Screenshot 3</span></div></figure>
+        <figure class="carousel-deck-card"><div class="slide-placeholder"><span>Screenshot 4</span></div></figure>
+      </div>
+      <button class="carousel-deck-next">Next card ↻</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="./src/carousels.js" defer></script>
+
+</body>
+</html>

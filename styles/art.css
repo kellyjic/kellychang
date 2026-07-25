@@ -1,0 +1,203 @@
+/* ============ ART PAGE ============ */
+
+.art-hero {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 8rem 2rem 3rem;
+}
+
+.art-hero .page-title {
+  margin-bottom: 1rem;
+}
+
+.art-hero p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.65);
+  max-width: 56ch;
+}
+
+/* ---- Husky Jump feature (bridge project) ---- */
+.art-feature {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.art-feature-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  background: #f8f5f0;
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.art-feature-image img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+.art-feature-text .art-kicker {
+  margin-bottom: 0.75rem;
+}
+
+.art-feature-text h2 {
+  font-family: "Inria Serif", serif;
+  font-size: 2rem;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.art-feature-text p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0 0 1.25rem;
+}
+
+.art-feature-text .project-link {
+  margin: 0;
+}
+
+/* ---- Section headers ---- */
+.art-section {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.art-kicker {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5765a;
+}
+
+.art-section-head {
+  margin-bottom: 2rem;
+}
+
+.art-section-head h2 {
+  font-family: "Inria Serif", serif;
+  font-size: 1.9rem;
+  margin: 0.4rem 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.art-section-head p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.art-section-head .watch-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+.art-section-head .watch-link:hover {
+  opacity: 0.6;
+}
+
+/* ---- Masonry grid ---- */
+.art-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+.art-tile {
+  break-inside: avoid;
+  margin: 0 0 1.5rem;
+  display: block;
+}
+
+.art-tile img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.art-tile figcaption {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+.art-tile .watch-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+/* ---- Placeholder tiles (until real photos/video are dropped in) ---- */
+.art-placeholder {
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px dashed rgba(0, 0, 0, 0.18);
+  background: #f7f4ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: rgba(0, 0, 0, 0.35);
+  text-align: center;
+  padding: 1rem;
+}
+
+.art-placeholder .icon {
+  font-size: 1.8rem;
+}
+
+.art-placeholder .label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ar-square { aspect-ratio: 1 / 1; }
+.ar-portrait { aspect-ratio: 4 / 5; }
+.ar-tall { aspect-ratio: 3 / 4; }
+.ar-wide { aspect-ratio: 16 / 10; }
+
+@media (max-width: 900px) {
+  .art-feature-card {
+    grid-template-columns: 1fr;
+  }
+  .art-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 560px) {
+  .art-grid {
+    column-count: 1;
+  }
+  .art-hero {
+    padding-top: 7rem;
+  }
+}

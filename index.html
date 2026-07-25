@@ -7,21 +7,152 @@
   <link rel="stylesheet" href="./styles/global.css" />
   <link rel="stylesheet" href="./styles/home.css" />
 </head>
-<body>
+<body class="home">
 
-  <!-- Nav -->
-  <nav class="home-nav">
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="work.html">Work</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
-  <!-- Centered Name -->
-  <main class="home-center">
-    <h1>Kelly Chang</h1>
-    <p>Designer & Developer</p>
-  </main>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kelly</a>
+    <div class="nav-links">
+      <a href="index.html" class="active"><u>Home</u></a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="art.html">Art</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="candy-hero">
+  <p class="corner-note">rip the wrapper, don't just stare at it</p>
+
+  <div class="wrapper-stage" id="wrapperStage">
+
+    <!-- unripped wrapper -->
+    <div class="wrapper" id="wrapper">
+      <div class="twist twist-left"></div>
+      <div class="wrapper-body">
+        <div class="perforation"></div>
+        <div class="wrap-half wrap-left"><span class="letters">KELLY</span></div>
+        <div class="wrap-half wrap-right"><span class="letters">CHANG</span></div>
+      </div>
+      <div class="twist twist-right"></div>
+
+      <!-- DOODLE PLACEHOLDER: swap path for hand-drawn arrow pointing at the rip tab -->
+      <span class="rip-hint" aria-hidden="true">
+        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6C22 4 40 14 46 30C50 41 44 48 34 46" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M22 42L34 46L31 33" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+
+      <button class="rip-tab" id="ripBtn">rip here →</button>
+    </div>
+
+    <!-- torn halves (revealed on rip) -->
+    <div class="torn-half torn-left" aria-hidden="true"><span class="letters">KEL</span></div>
+    <div class="torn-half torn-right" aria-hidden="true"><span class="letters">ANG</span></div>
+
+    <!-- what's underneath -->
+    <div class="reveal">
+      <figure class="reveal-photo">
+        <img src="assets/me.png" alt="Kelly Chang" />
+        <figcaption>hi, it's me</figcaption>
+      </figure>
+
+      <div class="reveal-text">
+        <h1>Kelly Chang</h1>
+
+        <!-- DOODLE PLACEHOLDER: swap path for hand-drawn underline squiggle -->
+        <span class="doodle-underline" aria-hidden="true">
+          <svg viewBox="0 0 120 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10C14 2 24 14 36 7C48 0 58 13 70 8C82 3 92 13 104 7C110 4 114 6 118 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+
+        <p>
+          Informatics junior at UW, splitting most weeks between Figma and Unity. Off the clock I'm usually deep in a video game, cutting together a travel edit from my last trip, or rewatching a movie I've already seen four times. This site is what happens when that mix leaks into the portfolio.
+        </p>
+
+        <div class="nutrition" role="img" aria-label="Nutrition facts joke label listing Kelly's daily interests">
+          <h2>Nutrition Facts</h2>
+          <div class="serving">
+            Serving Size: 1 Designer &nbsp;·&nbsp; Servings Per Career: N/A (still counting)
+          </div>
+          <div class="calories"><span>Calories from Curiosity</span><span>220</span></div>
+          <div class="row"><span><strong>Total Caffeine</strong></span><span>45g</span></div>
+          <div class="row indent"><span>Cold Brew</span><span>30g</span></div>
+          <div class="row"><span><strong>Video Games</strong></span><span>1 session/day</span></div>
+          <div class="row"><span><strong>Film &amp; Video Editing</strong></span><span>3 hrs/wk</span></div>
+          <div class="row"><span><strong>Travel Miles Logged</strong></span><span>4,200+</span></div>
+          <div class="row"><span><strong>Figma Undo Presses</strong></span><span>too many to count</span></div>
+          <p class="fine">*Percent daily values not established. This label is 100% a joke, the interests are not.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('ripBtn').addEventListener('click', function () {
+      document.getElementById('wrapperStage').classList.add('ripped');
+    });
+  </script>
+</main>
+
+<section class="work-teaser">
+  <div class="teaser-head">
+    <h2>A few things I've made</h2>
+    <p>Three picks, not a full stack — the rest live on the Projects page.</p>
+  </div>
+
+  <div class="sticker-grid">
+    <a class="sticker sticker-1" href="husky-jump.html">
+      <img src="assets/capstone.png" alt="Husky Jump game screenshot" />
+      <p class="s-tag">in progress</p>
+      <p class="s-title">Husky Jump</p>
+    </a>
+    <a class="sticker sticker-2" href="projects.html#pods">
+      <img src="assets/rd.png" alt="Pods project screenshot" />
+      <p class="s-tag">ux research</p>
+      <p class="s-title">Pods</p>
+    </a>
+    <a class="sticker sticker-3" href="projects.html#divvy">
+      <img src="assets/divvy.png" alt="Divvy app screenshot" />
+      <p class="s-tag">12hr hackathon</p>
+      <p class="s-title">Divvy</p>
+    </a>
+  </div>
+
+  <!-- DOODLE PLACEHOLDER: swap path for hand-drawn star -->
+  <a class="see-all" href="projects.html">see everything else →</a>
+</section>
+
+<footer class="home-footer">
+  <p>Say hi — <a href="mailto:kellyy2e@gmail.com">kellyy2e@gmail.com</a></p>
+</footer>
+
+<script>
+  (function () {
+    var glow = document.getElementById('cursorGlow');
+    if (!glow || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var raf = null;
+    window.addEventListener('mousemove', function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        glow.style.setProperty('--x', e.clientX + 'px');
+        glow.style.setProperty('--y', e.clientY + 'px');
+        glow.classList.add('active');
+        raf = null;
+      });
+    });
+    document.addEventListener('mouseleave', function () {
+      glow.classList.remove('active');
+    });
+  })();
+</script>
 
 </body>
 </html>

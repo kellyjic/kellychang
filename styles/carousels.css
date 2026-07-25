@@ -1,0 +1,382 @@
+/* ============================================================
+   CAROUSEL TEMPLATES
+   Five reusable, independent carousel styles for project pages.
+   Each is namespaced under its own class so multiple styles can
+   live on the same page without colliding. Swap the
+   .slide-placeholder divs for real <img> tags when photos are ready.
+   Pairs with src/carousels.js (auto-initializes anything it finds).
+   ============================================================ */
+
+
+/* ============================================================
+   PROJECT VIDEO
+   A single looping demo clip (autoplay + muted + loop in the
+   markup handles the actual looping — this just styles the frame).
+   ============================================================ */
+
+.project-video-wrap {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #111;
+}
+
+
+.slide-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    135deg,
+    #f3efe8,
+    #f3efe8 12px,
+    #ece5d8 12px,
+    #ece5d8 24px
+  );
+  border: 1.5px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.carousel-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5765a;
+  display: block;
+  margin: 0 0 0.5rem;
+}
+
+.carousel-heading {
+  font-family: "Inria Serif", serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.carousel-note {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 60ch;
+  margin: 0 0 1.5rem;
+}
+
+
+/* ============================================================
+   1. FADE CROSSFADE
+   Slides stack directly on top of each other and cross-fade in
+   place. No layout shift, calm transition. Good for hero-style
+   single-image showcases or before/after comparisons.
+   ============================================================ */
+
+.carousel-fade {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-fade-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.carousel-fade-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-fade-slide .slide-placeholder {
+  border-radius: 0;
+  border: none;
+}
+
+.carousel-fade-prev,
+.carousel-fade-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 3;
+}
+
+.carousel-fade-prev { left: 12px; }
+.carousel-fade-next { right: 12px; }
+.carousel-fade-prev:hover,
+.carousel-fade-next:hover { background: #fff; }
+
+.carousel-fade-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.carousel-fade-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-fade-dots button.is-active {
+  background: #fff;
+}
+
+
+/* ============================================================
+   2. SLIDING TRACK
+   Slides sit side by side in a flex track; arrows shift the whole
+   track left/right by one slide width. The classic "one slide at
+   a time" carousel.
+   ============================================================ */
+
+.carousel-slide {
+  position: relative;
+}
+
+.carousel-slide-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-slide-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide-slide {
+  flex: 0 0 100%;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+}
+
+.carousel-slide-slide .slide-placeholder {
+  border-radius: 0;
+  border: none;
+}
+
+.carousel-slide-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.carousel-slide-prev,
+.carousel-slide-next {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.carousel-slide-prev:hover,
+.carousel-slide-next:hover { background: #f3efe8; }
+
+.carousel-slide-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-slide-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+}
+
+.carousel-slide-dots button.is-active {
+  background: #b5765a;
+}
+
+
+/* ============================================================
+   3. SCROLL-SNAP FILMSTRIP
+   Native horizontal scroll with CSS scroll-snap — swipe on
+   trackpad/touch, or click the arrows to nudge by one slide.
+   No index state needed; the browser does the snapping.
+   ============================================================ */
+
+.carousel-scroll-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.carousel-scroll-slide {
+  flex: 0 0 78%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  margin: 0;
+}
+
+.carousel-scroll-controls {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.carousel-scroll-prev,
+.carousel-scroll-next {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.carousel-scroll-prev:hover,
+.carousel-scroll-next:hover { background: #f3efe8; }
+
+
+/* ============================================================
+   4. THUMBNAIL RAIL
+   One large "stage" image with a row of clickable thumbnails
+   below. Good for letting viewers jump straight to a specific
+   shot instead of stepping through in order.
+   ============================================================ */
+
+.carousel-thumb-stage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-thumb-stage .slide-placeholder {
+  border-radius: 0;
+  border: none;
+}
+
+.carousel-thumb-rail {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.carousel-thumb-item {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-thumb-item .slide-placeholder {
+  border-radius: 6px;
+  font-size: 0.7rem;
+}
+
+.carousel-thumb-item:hover { opacity: 0.85; }
+
+.carousel-thumb-item.is-active {
+  opacity: 1;
+  border-color: #b5765a;
+}
+
+
+/* ============================================================
+   5. STACKED DECK
+   Photos stacked like a hand of cards, fanned slightly. Click
+   the top card (or the button) to send it to the back of the
+   deck and reveal the next one.
+   ============================================================ */
+
+.carousel-deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-deck-stack {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+}
+
+.carousel-deck-card {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.34, 1.15, 0.64, 1), opacity 0.3s ease;
+  transform-origin: center bottom;
+}
+
+.carousel-deck-card .slide-placeholder {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-deck-next {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.carousel-deck-next:hover { background: #f3efe8; }
+
+@media (max-width: 640px) {
+  .carousel-thumb-rail { gap: 0.4rem; }
+  .carousel-scroll-slide { flex-basis: 88%; }
+}

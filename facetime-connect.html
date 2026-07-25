@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FaceTime Connect — Kelly Chang</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/case-study.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kelly</a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active"><u>Projects</u></a>
+      <a href="art.html">Art</a>
+      <a href="work.html">Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <a href="projects.html" class="project-link">← Back to Projects</a>
+  <p class="case-kicker">UX Case Study</p>
+  <h1 class="page-title">FaceTime Connect</h1>
+  <p class="case-dek">
+    A concept FaceTime feature that helps siblings with big age gaps find shared
+    interests — without forcing the conversation.
+  </p>
+
+  <div class="case-meta-row">
+    <span class="case-meta-pill"><b>Team:</b> Kelly Chang, Nathaniel Sayasack, Chunqi Zhao</span>
+    <span class="case-meta-pill"><b>Course:</b> INFO 360B, UW</span>
+    <span class="case-meta-pill"><b>Role:</b> Research, design &amp; prototyping — shared equally</span>
+    <span class="case-meta-pill"><b>Tool:</b> Figma</span>
+  </div>
+</header>
+
+<figure class="case-hero-image">
+  <img src="facetime-connect-assets/hero-figures-2-3.jpg" alt="Two FaceTime Connect activity cards — an orange 'Action Games' card and a green 'Matched!' confirmation screen">
+  <figcaption class="case-hero-caption">Swipe to react — a match unlocks a shared activity. The core loop of FaceTime Connect.</figcaption>
+</figure>
+
+<!-- THE PROBLEM -->
+<section class="case-section">
+  <div class="case-section-inner">
+    <h2>The problem</h2>
+    <p class="lede">
+      Most people grow up with a sibling, but that closeness doesn't hold on its own.
+      Age gaps, distance, and the drift that comes with growing up on different
+      timelines can quietly turn a close relationship into an occasional check-in call.
+    </p>
+
+    <div class="case-stat-row">
+      <div class="case-stat">
+        <div class="num">~80%</div>
+        <div class="lbl">of people in the U.S. grow up with a sibling (Weir, 2022)</div>
+      </div>
+      <div class="case-stat">
+        <div class="num">28.1%</div>
+        <div class="lbl">report at least one period of sibling estrangement (Streep, 2023)</div>
+      </div>
+    </div>
+
+    <p>
+      The gap widens fastest when an older sibling leaves for college — new environment,
+      new people, new routine — while a younger sibling at home adjusts to their absence.
+      In an interview, a University of Washington student with an 11-year-old younger
+      brother described rarely calling him anymore — the two simply didn't have much left
+      in common.
+    </p>
+
+    <p class="case-insight">
+      Video calling already exists. What's missing isn't a way to talk — it's a reason to.
+    </p>
+  </div>
+</section>
+
+<!-- THE SOLUTION -->
+<section class="case-section alt">
+  <div class="case-section-inner">
+    <h2>The solution</h2>
+    <p class="lede">
+      FaceTime Connect is layered directly into an active FaceTime call — not a separate
+      app siblings have to remember to open.
+    </p>
+    <p>
+      Tapping the screen mid-call brings up a navigation bar. One tap into FaceTime
+      Connect surfaces a single activity or interest — games, films, music, sports,
+      hobbies — one at a time. Both siblings swipe simultaneously: right for interested,
+      left for not. A match unlocks the option to try it together on the spot.
+    </p>
+    <p>
+      The recommendation model is hybrid — it starts broad with interest categories,
+      narrows into specific activities as matches accumulate, then periodically
+      resurfaces new categories so the well doesn't run dry.
+    </p>
+  </div>
+  <figure class="case-figure">
+    <img src="facetime-connect-assets/flow-matching.jpg" alt="User flow diagram: tap the screen to open the nav bar, select FaceTime Connect, swipe on an activity card, reach a matched screen">
+    <figcaption>The core matching flow — from opening the feature to a successful match.</figcaption>
+  </figure>
+</section>
+
+<!-- KEEPING TRACK OF MATCHES -->
+<section class="case-section">
+  <div class="case-section-inner">
+    <h2>Keeping track of matches</h2>
+    <p class="lede">
+      Matches are only useful if you can find them again. A history icon opens a running
+      list of every shared interest, sortable by time or category, with a search bar for
+      jumping straight to something specific.
+    </p>
+    <p>
+      Tapping into a matched interest surfaces concrete activities to actually plan —
+      starred items rise to the top, and a "generate more" option keeps the list from
+      going stale.
+    </p>
+  </div>
+  <figure class="case-figure">
+    <img src="facetime-connect-assets/flow-matched-list.jpg" alt="User flow diagram: tapping the clock icon opens the matched interest list, filtering by category, and viewing suggested activities">
+    <figcaption>Revisiting past matches — by category, chronologically, or by search.</figcaption>
+  </figure>
+</section>
+
+<!-- DESIGN DETAILS -->
+<section class="case-section alt">
+  <div class="case-section-inner">
+    <h2>Design details</h2>
+    <ul class="case-list">
+      <li><b>Color as signal</b> — matched screens turn green, borrowing the "go" association from traffic lights, so a successful match reads as unambiguously positive.</li>
+      <li><b>Guidance that gets out of the way</b> — swipe-direction hints only appear the first time a new user opens the feature, and fade out if untouched.</li>
+      <li><b>A drawer, not a takeover</b> — every FaceTime Connect screen slides up from the bottom and collapses back down, so the feature never competes with the actual video call for priority.</li>
+      <li><b>Picture-in-picture throughout</b> — both callers stay visible in a small floating window the entire time, because the point is still to talk, not just to swipe.</li>
+    </ul>
+  </div>
+  <figure class="case-figure">
+    <img src="facetime-connect-assets/mockup-annotated.jpg" alt="Annotated mockup of the FaceTime Connect main page, calling out the drawer menu, picture-in-picture windows, history icon, activity image, and description">
+    <figcaption>Breaking down the main FaceTime Connect screen.</figcaption>
+  </figure>
+</section>
+
+<!-- EVALUATION & PIVOT -->
+<section class="case-section">
+  <div class="case-section-inner">
+    <h2>Evaluation &amp; the pivot</h2>
+    <p class="lede">
+      The first version of this idea was bigger — built-in games, a collaborative
+      whiteboard, a shared photo album, a watch-party mode.
+    </p>
+    <p>
+      Then we interviewed a college student about calling her younger sibling. She didn't
+      think her sibling would actually play games with her — most of their calls were
+      just catching up on each other's week, with the occasional shared movie night being
+      the one thing they genuinely had in common.
+    </p>
+    <p class="case-insight">
+      The gap wasn't a missing feature. It was not knowing what your sibling is even
+      into anymore.
+    </p>
+    <p>
+      That reframed the whole problem — from "give siblings more things to do together"
+      to "help siblings discover what they'd actually want to do together" — and the
+      scope narrowed to exactly that.
+    </p>
+    <p>
+      A heuristic evaluation against two comparable products, <b>We3</b> (interest-based
+      friend matching) and <b>LetterLoop</b> (staying in touch with family), sharpened
+      specific decisions. We3 keeps its swipe-direction instructions permanently on
+      screen — a recognition-vs-recall violation — which is why FaceTime Connect's own
+      guidance only appears once, for first-time users. We also leaned on the familiar
+      clock icon for match history rather than inventing a new symbol, borrowing a
+      convention users already know.
+    </p>
+  </div>
+</section>
+
+<!-- SCOPE & LIMITATIONS -->
+<section class="case-section alt">
+  <div class="case-section-inner">
+    <h2>Scope &amp; limitations</h2>
+    <p>Being clear about what this feature is <i>not</i> mattered as much as defining what it is:</p>
+    <ul class="case-bounds">
+      <li><b>Not a therapy tool</b> — it can open a conversation, not resolve deeper family conflict.</li>
+      <li><b>Not a gaming platform</b> — activities are a starting point for connection, not a destination in themselves.</li>
+      <li><b>Not for parent-child dynamics</b> — designed specifically around the sibling relationship.</li>
+      <li><b>Not a FaceTime replacement</b> — it's an added layer on top of a tool people already use daily.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TAKEAWAY -->
+<section class="case-section">
+  <div class="case-section-inner">
+    <h2>Takeaway</h2>
+    <p class="lede">
+      One interview reshaped the entire premise of this project. The ambitious first
+      draft sounded exciting on paper, but a single honest comment from a real sibling
+      sent the whole team back to the problem statement. More features and the right
+      feature aren't the same thing — and the fastest way to tell them apart is to
+      just ask someone.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="case-cta">
+  <h2 class="page-title" style="font-size: 1.7rem;">See the full prototype</h2>
+  <p>Explore the interactive Figma file or watch the walkthrough video.</p>
+  <div class="case-cta-row">
+    <a href="https://www.figma.com/design/CAdgjOjAkk4EVmmRkeb6mW/FaceTime-Redesign?node-id=0-1&t=aj2l3pUiIlJPBLOp-1" target="_blank" class="project-link">View Figma prototype ↗</a>
+    <a href="https://youtu.be/nREoP5Yqqg8?si=n3oQ9wgWAT85y_r-" target="_blank" class="project-link">Watch demo video ↗</a>
+    <a href="projects.html" class="project-link">Back to all work</a>
+  </div>
+</div>
+
+</body>
+</html>
