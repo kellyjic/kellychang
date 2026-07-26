@@ -9,7 +9,9 @@
 </head>
 <body class="home">
 
+<div class="cam-grain"></div>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cam-flash" id="camFlash"></div>
 
 <!-- NAV -->
 <nav class="nav">
@@ -19,120 +21,187 @@
       <a href="index.html" class="active"><u>Home</u></a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="art.html">Art</a>
       <a href="work.html">Work</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
 </nav>
 
-<main class="candy-hero">
-  <p class="corner-note">rip the wrapper, don't just stare at it</p>
+<main class="cam-hero">
+  <span class="cam-hud cam-hud-tl">f/2.8 — iso 200 — 1/125</span>
+  <span class="cam-hud cam-hud-tr">roll: UX·27</span>
+  <span class="cam-hud cam-hud-bl">Seattle, WA</span>
+  <span class="cam-hud cam-hud-br">subject: K. Chang</span>
 
-  <div class="wrapper-stage" id="wrapperStage">
+  <p class="cam-eyebrow">Product &amp; UX Designer</p>
+  <h1 class="cam-headline">Kelly Chang</h1>
+  <p class="cam-subhead">Designer · Developer · Perpetually curious</p>
 
-    <!-- unripped wrapper -->
-    <div class="wrapper" id="wrapper">
-      <div class="twist twist-left"></div>
-      <div class="wrapper-body">
-        <div class="perforation"></div>
-        <div class="wrap-half wrap-left"><span class="letters">KELLY</span></div>
-        <div class="wrap-half wrap-right"><span class="letters">CHANG</span></div>
-      </div>
-      <div class="twist twist-right"></div>
-
-      <!-- DOODLE PLACEHOLDER: swap path for hand-drawn arrow pointing at the rip tab -->
-      <span class="rip-hint" aria-hidden="true">
-        <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 6C22 4 40 14 46 30C50 41 44 48 34 46" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          <path d="M22 42L34 46L31 33" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-
-      <button class="rip-tab" id="ripBtn">rip here →</button>
-    </div>
-
-    <!-- torn halves (revealed on rip) -->
-    <div class="torn-half torn-left" aria-hidden="true"><span class="letters">KEL</span></div>
-    <div class="torn-half torn-right" aria-hidden="true"><span class="letters">ANG</span></div>
-
-    <!-- what's underneath -->
-    <div class="reveal">
-      <figure class="reveal-photo">
-        <img src="assets/me.png" alt="Kelly Chang" />
-        <figcaption>hi, it's me</figcaption>
+  <div class="cam-stage" id="camStage">
+    <div class="cam-frame-box">
+      <!-- idle: click to "shoot" -->
+      <figure class="cam-shot is-active" id="camIdle">
+        <img src="assets/camera-button.png" alt="Click the camera to take a photo" />
       </figure>
 
-      <div class="reveal-text">
-        <h1>Kelly Chang</h1>
-
-        <!-- DOODLE PLACEHOLDER: swap path for hand-drawn underline squiggle -->
-        <span class="doodle-underline" aria-hidden="true">
-          <svg viewBox="0 0 120 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10C14 2 24 14 36 7C48 0 58 13 70 8C82 3 92 13 104 7C110 4 114 6 118 9" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-        </span>
-
-        <p>
-          Informatics junior at UW, splitting most weeks between Figma and Unity. Off the clock I'm usually deep in a video game, cutting together a travel edit from my last trip, or rewatching a movie I've already seen four times. This site is what happens when that mix leaks into the portfolio.
-        </p>
-
-        <div class="nutrition" role="img" aria-label="Nutrition facts joke label listing Kelly's daily interests">
-          <h2>Nutrition Facts</h2>
-          <div class="serving">
-            Serving Size: 1 Designer &nbsp;·&nbsp; Servings Per Career: N/A (still counting)
-          </div>
-          <div class="calories"><span>Calories from Curiosity</span><span>220</span></div>
-          <div class="row"><span><strong>Total Caffeine</strong></span><span>45g</span></div>
-          <div class="row indent"><span>Cold Brew</span><span>30g</span></div>
-          <div class="row"><span><strong>Video Games</strong></span><span>1 session/day</span></div>
-          <div class="row"><span><strong>Film &amp; Video Editing</strong></span><span>3 hrs/wk</span></div>
-          <div class="row"><span><strong>Travel Miles Logged</strong></span><span>4,200+</span></div>
-          <div class="row"><span><strong>Figma Undo Presses</strong></span><span>too many to count</span></div>
-          <p class="fine">*Percent daily values not established. This label is 100% a joke, the interests are not.</p>
+      <!-- captured: revealed after shooting -->
+      <figure class="cam-shot" id="camCaptured">
+        <img src="assets/camera-frame.png" alt="Camera with photo displayed on screen" />
+        <div class="cam-photo-overlay">
+          <img src="assets/me.png" alt="Kelly Chang" />
         </div>
-      </div>
+      </figure>
+
+      <button class="cam-shutter-btn" id="shutterBtn" aria-label="Press the shutter to take a photo">
+        <span class="cam-shutter-dot"></span>
+        <span class="cam-shutter-label">Shoot</span>
+      </button>
+
+      <!-- DOODLE PLACEHOLDER: swap for your own "click!" burst / motion lines -->
+      <svg class="cam-burst" id="camBurst" viewBox="0 0 90 90" aria-hidden="true">
+        <g stroke="var(--amber)" stroke-width="3" stroke-linecap="round">
+          <line x1="45" y1="4" x2="45" y2="18" />
+          <line x1="45" y1="72" x2="45" y2="86" />
+          <line x1="4" y1="45" x2="18" y2="45" />
+          <line x1="72" y1="45" x2="86" y2="45" />
+          <line x1="14" y1="14" x2="24" y2="24" />
+          <line x1="66" y1="66" x2="76" y2="76" />
+          <line x1="14" y1="76" x2="24" y2="66" />
+          <line x1="66" y1="24" x2="76" y2="14" />
+        </g>
+      </svg>
     </div>
+
+    <p class="cam-press-hint" id="pressHint">press the shutter<span class="cursor">_</span></p>
+    <button class="cam-retake-btn" id="retakeBtn">↺ retake</button>
   </div>
 
-  <script>
-    document.getElementById('ripBtn').addEventListener('click', function () {
-      document.getElementById('wrapperStage').classList.add('ripped');
-    });
-  </script>
+  <a href="#work" class="cam-scroll-cue">
+    <span>selected work</span>
+    <span class="arrow">↓</span>
+  </a>
 </main>
 
-<section class="work-teaser">
-  <div class="teaser-head">
-    <h2>A few things I've made</h2>
-    <p>Three picks, not a full stack — the rest live on the Projects page.</p>
+<section class="work" id="work">
+  <div class="work-head">
+    <p class="cam-eyebrow">Contact Sheet</p>
+    <h2>Selected work</h2>
+    <p>Five rolls, five projects — scroll or use the arrows to click through.</p>
   </div>
 
-  <div class="sticker-grid">
-    <a class="sticker sticker-1" href="husky-jump.html">
-      <img src="assets/capstone.png" alt="Husky Jump game screenshot" />
-      <p class="s-tag">in progress</p>
-      <p class="s-title">Husky Jump</p>
-    </a>
-    <a class="sticker sticker-2" href="projects.html#pods">
-      <img src="assets/rd.png" alt="Pods project screenshot" />
-      <p class="s-tag">ux research</p>
-      <p class="s-title">Pods</p>
-    </a>
-    <a class="sticker sticker-3" href="projects.html#divvy">
-      <img src="assets/divvy.png" alt="Divvy app screenshot" />
-      <p class="s-tag">12hr hackathon</p>
-      <p class="s-title">Divvy</p>
-    </a>
-  </div>
+  <div class="sprocket"></div>
+  <div class="filmstrip" id="filmstrip">
 
-  <!-- DOODLE PLACEHOLDER: swap path for hand-drawn star -->
-  <a class="see-all" href="projects.html">see everything else →</a>
+    <a class="frame" href="husky-jump.html">
+      <div class="frame-img"><img src="assets/capstone.png" alt="Husky Jump game screenshot"></div>
+      <div class="frame-body">
+        <p class="frame-tag">01 · In progress</p>
+        <h3 class="frame-title">Husky Jump</h3>
+        <p class="frame-role">UI/UX Designer &amp; Unity Dev · 2026</p>
+        <p class="frame-blurb">A 2D platformer birthday game for UW iSchool alumni — turning a yearly email into something people actually want to open.</p>
+        <div class="frame-chips"><span class="chip">Unity</span><span class="chip">Figma</span><span class="chip">Game Design</span></div>
+      </div>
+    </a>
+
+    <a class="frame" href="projects.html#pods">
+      <div class="frame-img"><img src="assets/rd.png" alt="Pods project screenshot"></div>
+      <div class="frame-body">
+        <p class="frame-tag">02</p>
+        <h3 class="frame-title">Pods</h3>
+        <p class="frame-role">UX Researcher · 2025</p>
+        <p class="frame-blurb">A podcast companion site inspired by NotebookLM — reimagining passive listening as something structured and searchable.</p>
+        <div class="frame-chips"><span class="chip">UX Research</span><span class="chip">IA</span><span class="chip">Wireframes</span></div>
+      </div>
+    </a>
+
+    <a class="frame" href="projects.html#divvy">
+      <div class="frame-img"><img src="assets/divvy.png" alt="Divvy app screenshot"></div>
+      <div class="frame-body">
+        <p class="frame-tag">03 · Hackathon</p>
+        <h3 class="frame-title">Divvy</h3>
+        <p class="frame-role">Designer, 12-hr Hackathon · 2025</p>
+        <p class="frame-blurb">A bill-splitting app built to kill the group-chat math wars — high-fidelity screens in half a day.</p>
+        <div class="frame-chips"><span class="chip">Figma</span><span class="chip">Rapid Prototyping</span></div>
+      </div>
+    </a>
+
+    <a class="frame" href="projects.html#travelog">
+      <div class="frame-img"><img src="assets/travelog.png" alt="TraveLog app screenshot"></div>
+      <div class="frame-body">
+        <p class="frame-tag">04</p>
+        <h3 class="frame-title">TraveLog</h3>
+        <p class="frame-role">Developer &amp; Designer · 2024</p>
+        <p class="frame-blurb">A full-stack travel diary with Firebase auth and Firestore — built end to end, data model to UI.</p>
+        <div class="frame-chips"><span class="chip">React</span><span class="chip">Firebase</span></div>
+      </div>
+    </a>
+
+    <a class="frame" href="facetime-connect.html">
+      <div class="frame-img"><img src="assets/facetime.png" alt="Facetime Connect screenshot"></div>
+      <div class="frame-body">
+        <p class="frame-tag">05</p>
+        <h3 class="frame-title">Facetime Connect</h3>
+        <p class="frame-role">Designer · 2024</p>
+        <p class="frame-blurb">A concept FaceTime feature helping siblings with big age gaps find shared ground, without forcing the conversation.</p>
+        <div class="frame-chips"><span class="chip">User Research</span><span class="chip">Prototyping</span></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="sprocket"></div>
+
+  <div class="work-controls">
+    <button class="arrow-btn" id="prevBtn" aria-label="Scroll left">←</button>
+    <button class="arrow-btn" id="nextBtn" aria-label="Scroll right">→</button>
+  </div>
 </section>
 
 <footer class="home-footer">
   <p>Say hi — <a href="mailto:kellyy2e@gmail.com">kellyy2e@gmail.com</a></p>
 </footer>
+
+<script>
+  (function () {
+    var stage = document.getElementById('camStage');
+    var idle = document.getElementById('camIdle');
+    var captured = document.getElementById('camCaptured');
+    var shutterBtn = document.getElementById('shutterBtn');
+    var retakeBtn = document.getElementById('retakeBtn');
+    var flash = document.getElementById('camFlash');
+    var pressHint = document.getElementById('pressHint');
+    var animating = false;
+
+    function takePhoto() {
+      if (animating || stage.classList.contains('captured')) return;
+      animating = true;
+      stage.classList.add('shooting');
+      pressHint.style.opacity = '0';
+
+      setTimeout(function () { flash.classList.add('flashing'); }, 150);
+      setTimeout(function () { flash.classList.remove('flashing'); }, 260);
+      setTimeout(function () {
+        idle.classList.remove('is-active');
+        captured.classList.add('is-active');
+        stage.classList.remove('shooting');
+        stage.classList.add('captured');
+        animating = false;
+      }, 300);
+    }
+
+    shutterBtn.addEventListener('click', takePhoto);
+
+    retakeBtn.addEventListener('click', function () {
+      captured.classList.remove('is-active');
+      idle.classList.add('is-active');
+      stage.classList.remove('captured');
+      pressHint.style.opacity = '.5';
+    });
+  })();
+
+  var filmstrip = document.getElementById('filmstrip');
+  document.getElementById('prevBtn').addEventListener('click', function () { filmstrip.scrollBy({ left: -270, behavior: 'smooth' }); });
+  document.getElementById('nextBtn').addEventListener('click', function () { filmstrip.scrollBy({ left: 270, behavior: 'smooth' }); });
+</script>
 
 <script>
   (function () {

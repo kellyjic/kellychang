@@ -322,6 +322,91 @@ body {
   }
 }
 
+/* ---- Side Quest (About page teaser into art.html) ---- */
+.side-quest {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.marquee-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 0;
+}
+
+.marquee-row {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: marquee-left 70s linear infinite;
+}
+
+.marquee-row.marquee-right .marquee-track {
+  animation-name: marquee-right;
+}
+
+.marquee-track img {
+  height: 150px;
+  width: auto;
+  border-radius: 10px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  z-index: 1;
+}
+
+.side-quest-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+}
+
+.side-quest-content .about-text a.project-link {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .side-quest { min-height: 520px; }
+  .marquee-track img { height: 100px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation-play-state: paused; }
+}
+
 
 .work-container {
   max-width: 1100px;
