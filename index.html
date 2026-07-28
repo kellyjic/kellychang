@@ -70,6 +70,25 @@
           <line x1="66" y1="24" x2="76" y2="14" />
         </g>
       </svg>
+
+      <!-- DOODLE PLACEHOLDER: burst stickers, echoing the sticker style on the camera photos themselves -->
+      <svg class="cam-sticker cam-sticker-star1" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2 14.7 8.5 21.8 9.3 16.4 14.1 18 21.2 12 17.5 6 21.2 7.6 14.1 2.2 9.3 9.3 8.5Z" fill="none" stroke="var(--sticker-silver)" stroke-width="1.5" stroke-linejoin="round" />
+      </svg>
+      <svg class="cam-sticker cam-sticker-heart" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 21s-7-4.35-9.5-8.5C.5 9 2 5 6 5c2 0 3.5 1.5 4 3 .5-1.5 2-3 4-3 4 0 5.5 4 3.5 7.5C19 16.65 12 21 12 21z" fill="var(--sticker-pink)" />
+      </svg>
+      <svg class="cam-sticker cam-sticker-sparkle" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2 14 10 22 12 14 14 12 22 10 14 2 12 10 10Z" fill="var(--sticker-silver)" />
+      </svg>
+      <svg class="cam-sticker cam-sticker-star2" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2 14.7 8.5 21.8 9.3 16.4 14.1 18 21.2 12 17.5 6 21.2 7.6 14.1 2.2 9.3 9.3 8.5Z" fill="var(--sticker-pink)" />
+      </svg>
+
+      <div class="cam-blurb" id="camBlurb">
+        <p class="cam-blurb-hi">Hi! I'm Kelly</p>
+        <p class="cam-blurb-text">Rising senior at UW studying Informatics. When I'm not designing, I'm probably gaming, traveling, or rewatching a movie for the fourth time.</p>
+      </div>
     </div>
 
     <p class="cam-press-hint" id="pressHint">press the shutter<span class="cursor">_</span></p>
@@ -177,15 +196,17 @@
       stage.classList.add('shooting');
       pressHint.style.opacity = '0';
 
-      setTimeout(function () { flash.classList.add('flashing'); }, 150);
-      setTimeout(function () { flash.classList.remove('flashing'); }, 260);
+      setTimeout(function () { flash.classList.add('flashing'); }, 70);
       setTimeout(function () {
         idle.classList.remove('is-active');
         captured.classList.add('is-active');
         stage.classList.remove('shooting');
         stage.classList.add('captured');
+      }, 130);
+      setTimeout(function () {
+        flash.classList.remove('flashing');
         animating = false;
-      }, 300);
+      }, 230);
     }
 
     shutterBtn.addEventListener('click', takePhoto);

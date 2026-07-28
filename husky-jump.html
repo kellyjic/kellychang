@@ -39,10 +39,11 @@
   </div>
 
   <p>
-    Designing and developing an interactive 2D platform game for the University of
-    Washington iSchool Alumni Team. This personalized birthday experience aims to
-    increase alumni engagement, participation, and long-term community involvement
-    through gamification.
+    The UW iSchool Alumni Team came to us with a problem: engagement was low, and they
+    wanted a tighter-knit alumni community. Their brief was simple to state and
+    open-ended to solve — build a fun, interactive game to send alumni on their
+    birthdays, one that could move the needle on engagement, participation, and
+    long-term involvement.
   </p>
 
   <p class="project-details">
@@ -76,19 +77,75 @@
     </video>
   </div>
 
-  <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(0,0,0,0.1);" />
+  <h2 class="carousel-heading" style="margin-top: 3rem;">Design principles</h2>
+  <p class="carousel-note">Five things we kept coming back to while making decisions:</p>
+  <div class="principle-grid">
+    <div class="principle"><h4>Engagement</h4><p>Personalization and relevance increase engagement.</p></div>
+    <div class="principle"><h4>Retention</h4><p>Visual design attracts users; gameplay supports retention.</p></div>
+    <div class="principle"><h4>Accessibility</h4><p>Stronger contrast and clearer text.</p></div>
+    <div class="principle"><h4>Session length</h4><p>Short sessions (~5 min) match user expectations.</p></div>
+    <div class="principle"><h4>Representation</h4><p>Locations, items, and characters help users feel represented.</p></div>
+  </div>
 
+  <h2 class="carousel-heading" style="margin-top: 3rem;">From Mario to Montlake</h2>
+  <p>
+    The first version of this was just a straightforward platformer — something in the
+    spirit of Super Mario Bros, nostalgic enough to land with alumni across every age
+    group. From there the concept got more specific: what if it felt like UW instead of
+    a generic platformer world? The game split into 5 levels, each one a spot on campus
+    every iSchool student knows and loves — with items and enemies pulled from that same
+    world. On top of that, it became a timed run: how fast can you clear all 5 levels?
+  </p>
+
+  <h2 class="carousel-heading" style="margin-top: 3rem;">Character design</h2>
+  <p class="carousel-note">
+    Early exploration — painted concept sketches, a line-art expression sheet, and a
+    pixel-sprite test — versus the character that made it into the game: a consistent
+    black-and-white husky in a UW bandana, with a full walk cycle.
+  </p>
+
+  <div class="carousel-fade" aria-roledescription="carousel">
+    <figure class="carousel-fade-slide is-active">
+      <img src="assets/characterdesign-draft.png" alt="Early character exploration: painted concept sketches, a line-art expression sheet, and a pixel sprite test" style="width:100%; height:100%; object-fit:contain;">
+    </figure>
+    <figure class="carousel-fade-slide">
+      <img src="assets/characterdesign.png" alt="Final character sprite sheet: black-and-white husky in a UW bandana, full walk cycle" style="width:100%; height:100%; object-fit:contain;">
+    </figure>
+    <button class="carousel-fade-prev" aria-label="Previous slide">←</button>
+    <button class="carousel-fade-next" aria-label="Next slide">→</button>
+    <div class="carousel-fade-dots"></div>
+  </div>
+  <p class="carousel-note" style="margin-top: .75rem;">Draft exploration → final in-game sprite</p>
+
+  <h2 class="carousel-heading" style="margin-top: 3rem;">Early storyboard &amp; mechanics</h2>
+  <p>
+    The original storyboard mapped out the whole flow: a birthday-invitation intro
+    ("you're invited to come back to UW"), a personalized name entry, a short tutorial,
+    then five levels of platforming. Touching an enemy or missing a puddle jump costs
+    time — this is a speedrun, after all — while jumping up to out-of-the-way platforms
+    reveals items or a nice view. Each level ends at a giant "W" sign marking the way
+    back to campus. A couple of early hazard ideas made it in too: a rain monster you
+    dodge by hiding under a tunnel, and wind gusts strong enough that you have to grab
+    onto a tree to avoid getting blown away.
+  </p>
+  <figure style="margin: 1.5rem 0 3rem;">
+    <img src="assets/oldstoryboard.png" alt="Early storyboard: birthday invitation intro, name entry, tutorial map, and gameplay panels covering item collection, enemies, puddles, platforming, the level goal, and two hazards" style="width:100%; border-radius:10px; display:block;">
+    <figcaption class="carousel-note" style="margin-top: .6rem;">The first storyboard — flow, mechanics, and a couple of hazard ideas, sketched out before any of the art existed.</figcaption>
+  </figure>
+
+  <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(0,0,0,0.1);" />
+<!-- 
   <p class="carousel-label">Carousel style demos</p>
   <h2 class="carousel-heading" style="font-size: 1.7rem; margin-bottom: 2.5rem;">
     Five ways to show progress shots — templates for this page and future project pages
-  </h2>
+  </h2> -->
 
 
   <!-- ============================================================
        CAROUSEL TEMPLATE 1 — FADE CROSSFADE
        Slides stack on top of each other and cross-fade in place.
        Good for: hero shots, before/after comparisons.
-       ============================================================ -->
+       ============================================================ 
   <section style="margin-bottom: 4rem;">
     <p class="carousel-label">1 · Fade Crossfade</p>
     <h3 class="carousel-heading">Concept art fade-through</h3>
@@ -103,7 +160,7 @@
       <button class="carousel-fade-next" aria-label="Next slide">→</button>
       <div class="carousel-fade-dots"></div>
     </div>
-  </section>
+  </section>-->
 
 
   <!-- ============================================================
@@ -111,7 +168,7 @@
        Slides sit side by side in a flex track; arrows shift the
        whole track left/right by one slide. The classic "one slide
        at a time" carousel.
-       ============================================================ -->
+       ============================================================ 
   <section style="margin-bottom: 4rem;">
     <p class="carousel-label">2 · Sliding Track</p>
     <h3 class="carousel-heading">Level walkthrough</h3>
@@ -132,14 +189,14 @@
         <button class="carousel-slide-next" aria-label="Next slide">→</button>
       </div>
     </div>
-  </section>
+  </section>-->
 
 
   <!-- ============================================================
        CAROUSEL TEMPLATE 3 — SCROLL-SNAP FILMSTRIP
        Native horizontal scroll with CSS scroll-snap — swipe on
        trackpad/touch, or click the arrows to nudge by one slide.
-       ============================================================ -->
+       ============================================================
   <section style="margin-bottom: 4rem;">
     <p class="carousel-label">3 · Scroll-Snap Filmstrip</p>
     <h3 class="carousel-heading">UI iterations</h3>
@@ -158,7 +215,7 @@
         <button class="carousel-scroll-next" aria-label="Next slide">→</button>
       </div>
     </div>
-  </section>
+  </section>-->
 
 
   <!-- ============================================================
@@ -166,7 +223,7 @@
        One large "stage" image with a row of clickable thumbnails
        below. Good for letting viewers jump straight to a specific
        shot instead of stepping through in order.
-       ============================================================ -->
+       ============================================================
   <section style="margin-bottom: 4rem;">
     <p class="carousel-label">4 · Thumbnail Rail</p>
     <h3 class="carousel-heading">Character designs</h3>
@@ -181,7 +238,7 @@
         <button class="carousel-thumb-item"><div class="slide-placeholder">4</div></button>
       </div>
     </div>
-  </section>
+  </section>-->
 
 
   <!-- ============================================================
@@ -189,7 +246,7 @@
        Photos stacked like a hand of cards, fanned slightly. Click
        the top card (or the button) to send it to the back of the
        deck and reveal the next one.
-       ============================================================ -->
+       ============================================================ 
   <section style="margin-bottom: 4rem;">
     <p class="carousel-label">5 · Stacked Deck</p>
     <h3 class="carousel-heading">Process snapshots</h3>
@@ -204,7 +261,7 @@
       </div>
       <button class="carousel-deck-next">Next card ↻</button>
     </div>
-  </section>
+  </section>-->
 
 </main>
 

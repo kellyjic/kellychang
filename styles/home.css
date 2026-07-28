@@ -16,6 +16,8 @@ body.home {
   --shutter-red: #E63946;
   --amber: #FFC23C;
   --line: rgba(27, 26, 25, .12);
+  --sticker-pink: #F3A6C4;
+  --sticker-silver: #C7CDD3;
   color: var(--ink);
   font-family: 'Space Mono', ui-monospace, monospace;
 }
@@ -119,21 +121,26 @@ body.home .nav-links a:hover {
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin: 0 0 44px;
+  margin: 0 0 14px;
 }
 
 /* ---------------- camera stage (real photos) ---------------- */
 .cam-stage {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 480px;
 }
 
 .cam-frame-box {
   position: relative;
   width: 100%;
-  aspect-ratio: 675 / 1200;
+  max-width: 260px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   filter: drop-shadow(0 24px 34px rgba(27, 26, 25, .18));
+}
+.cam-stage.captured .cam-frame-box {
+  aspect-ratio: 675 / 1200;
 }
 
 .cam-shot {
@@ -173,10 +180,10 @@ body.home .nav-links a:hover {
 
 .cam-shutter-btn {
   position: absolute;
-  bottom: -10px;
-  right: -10px;
-  width: 60px;
-  height: 60px;
+  top: -8px;
+  right: -8px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 3px solid var(--paper);
   background: radial-gradient(circle at 35% 30%, #ff5b64, var(--shutter-red) 70%);
@@ -187,12 +194,17 @@ body.home .nav-links a:hover {
   gap: 2px;
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(230, 57, 70, .35), inset 0 -3px 6px rgba(0, 0, 0, .2);
-  transition: transform .12s ease;
+  transition: transform .12s ease, opacity .3s ease .1s;
   z-index: 4;
 }
 .cam-shutter-btn:hover { transform: scale(1.06); }
 .cam-shutter-btn:active { transform: scale(.93); }
 .cam-shutter-btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.cam-stage.captured .cam-shutter-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.5);
+}
 .cam-shutter-dot { width: 9px; height: 9px; border-radius: 50%; background: #fff; opacity: .9; }
 .cam-shutter-label { font-size: 8px; letter-spacing: .1em; color: #fff; opacity: .9; }
 
@@ -217,6 +229,82 @@ body.home .nav-links a:hover {
   0% { opacity: 0; transform: scale(.5); }
   35% { opacity: 1; transform: scale(1.05); }
   100% { opacity: 0; transform: scale(1.3); }
+}
+
+/* burst stickers — echo the Y2K sticker look already on the camera photos */
+.cam-sticker {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease, transform .55s cubic-bezier(.34, 1.56, .64, 1);
+  z-index: 3;
+}
+.cam-stage.captured .cam-sticker { opacity: 1; }
+
+.cam-sticker-star1 { left: -6%; top: 4%; transform: scale(.3) rotate(-18deg); transition-delay: .05s; }
+.cam-stage.captured .cam-sticker-star1 { transform: scale(1) rotate(-18deg); }
+
+.cam-sticker-heart { right: -8%; top: 42%; transform: scale(.3) rotate(12deg); transition-delay: .15s; }
+.cam-stage.captured .cam-sticker-heart { transform: scale(1) rotate(12deg); }
+
+.cam-sticker-sparkle { left: -4%; top: 66%; transform: scale(.3) rotate(8deg); transition-delay: .1s; }
+.cam-stage.captured .cam-sticker-sparkle { transform: scale(1) rotate(8deg); }
+
+.cam-sticker-star2 { right: -2%; bottom: 0%; transform: scale(.3) rotate(-10deg); transition-delay: .2s; }
+.cam-stage.captured .cam-sticker-star2 { transform: scale(1) rotate(-10deg); }
+
+/* personal blurb — collapsed pre-shoot so it doesn't reserve dead space, expands on capture */
+.cam-blurb {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 230px;
+  margin-left: 22px;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  transform: translateY(-50%) scale(.8);
+  transition: opacity .4s ease .15s, transform .5s cubic-bezier(.34, 1.56, .64, 1) .15s;
+  z-index: 3;
+}
+.cam-stage.captured .cam-blurb {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+.cam-blurb-hi {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+.cam-blurb-text {
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .cam-blurb {
+    left: 50%;
+    top: 100%;
+    width: 260px;
+    max-width: 80vw;
+    margin-left: 0;
+    margin-top: 18px;
+    text-align: center;
+    transform: translateX(-50%) scale(.8);
+  }
+  .cam-stage.captured .cam-blurb {
+    transform: translateX(-50%) scale(1);
+  }
+  /* the blurb is absolutely positioned (doesn't occupy flow space) —
+     reserve room below the frame so it doesn't overlap the retake
+     button / press hint / scroll cue that follow in normal flow */
+  .cam-frame-box { transition: margin-bottom .5s ease .15s; }
+  .cam-stage.captured .cam-frame-box { margin-bottom: 200px; }
 }
 
 .cam-press-hint {
@@ -260,9 +348,9 @@ body.home .nav-links a:hover {
   opacity: 0;
   pointer-events: none;
   z-index: 50;
-  transition: opacity .12s ease;
+  transition: opacity .18s ease;
 }
-.cam-flash.flashing { opacity: .92; transition: opacity .05s ease; }
+.cam-flash.flashing { opacity: .98; transition: opacity .03s ease; }
 
 /* ---------------- scroll cue ---------------- */
 .cam-scroll-cue {
@@ -367,6 +455,7 @@ body.home .nav-links a:hover {
   .cam-hero { padding: 16px 20px 50px; }
   .cam-hud { display: none; }
   .cam-stage { max-width: 240px; }
+  .cam-sticker { width: 26px; height: 26px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -374,4 +463,6 @@ body.home .nav-links a:hover {
   .cam-scroll-cue .arrow { animation: none; }
   .cam-stage.shooting .cam-shot.is-active { animation: none; }
   .cam-shot { transition: opacity .2s ease; }
+  .cam-sticker { transition: opacity .2s ease; transition-delay: 0s !important; }
+  .cam-blurb { transition: opacity .2s ease, max-height .2s ease; }
 }

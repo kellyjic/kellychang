@@ -477,3 +477,24 @@ body {
   background: rgba(0,0,0,0.05);
   border-radius: 999px;
 }
+
+/* ---- Design principle grid (case study pages) ---- */
+.principle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.principle h4 {
+  font-family: "Inria Serif", serif;
+  font-size: 1.05rem;
+  margin: 0 0 0.35rem;
+}
+
+.principle p {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  line-height: 1.5;
+}
